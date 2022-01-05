@@ -6,6 +6,8 @@ import ProyectCard from './components/Card';
 import Hero from './components/Hero';
 import './App.css';
 
+import profileImg from '../assets/profile.jpg';
+
 function App() {
     const myProjects = [1, 2, 3];
     return (
@@ -14,7 +16,7 @@ function App() {
                 <NavExample></NavExample>
                 <div className="hero-container">
                     <div className="img-container">
-                        <img className="img-profile" src="./assets/profile.jpg" alt="imagen-perfil" />
+                        <img className="img-profile" src={profileImg} alt="imagen-perfil" />
                     </div>
                     <Hero></Hero>
                 </div>

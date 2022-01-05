@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { fadeInLeft, fadeInDown, fadeInUp, fadeInRight, zoomIn } from 'react-animations';
 import { StyleSheet, css } from 'aphrodite';
 
 import './styles/Hero.css';
+
+import exImg from '../../assets/ex.png';
+import cirleImg from '../../assets/circle.png';
+import squareImg from '../../assets/square.png';
+import triangleImg from '../../assets/triangle.png';
 
 const styles = StyleSheet.create({
     fadeInLeft: {
@@ -29,15 +34,21 @@ const styles = StyleSheet.create({
 });
 
 function Hero() {
+    const [showImage, setShowImage] = useState(false);
+
+    setTimeout(() => {
+        setShowImage(true);
+    }, 7000);
+
     return (
         <div className="play-container">
             <div className="images-play-container">
-                <img className={css(styles.fadeInLeft)} src="./assets/triangle.png" alt="triangle" />
-                <img className={css(styles.fadeInUp)} src="./assets/square.png" alt="triangle" />
-                <img className={css(styles.fadeInDown)} src="./assets/circle.png" alt="triangle" />
-                <img className={css(styles.fadeInRight)} src="./assets/ex.png" alt="triangle" />
+                <img className={css(styles.fadeInLeft)} src={triangleImg} alt="triangle" />
+                <img className={css(styles.fadeInUp)} src={squareImg} alt="square" />
+                <img className={css(styles.fadeInDown)} src={cirleImg} alt="circle" />
+                <img className={css(styles.fadeInRight)} src={exImg} alt="ex" />
             </div>
-            <h3 className={css(styles.zoomIn)}>Status playing ...</h3>
+            {showImage ? <h3 className={css(styles.zoomIn)}>Status playing ...</h3> : <h3></h3>}
         </div>
     );
 }
