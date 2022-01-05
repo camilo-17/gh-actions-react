@@ -9,13 +9,14 @@
 
 .img-container {
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
 .hero-container {
     display: flex;
-    flex-direction: row-reverse;
     margin-bottom: 50px;
+    margin: 50px 0;
+    align-items: center;
 }
 
 .cards-container {
