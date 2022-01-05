@@ -6,19 +6,14 @@ export default function NavExample() {
         <Nav>
             <NavItem>
                 <NavLink active href="#">
-                    Active
+                    Home
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">Link</NavLink>
+                <NavLink href="#">Projects</NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">Another Link</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink disabled href="#">
-                    Disabled Link
-                </NavLink>
+                <NavLink href="#">About me</NavLink>
             </NavItem>
         </Nav>
     );

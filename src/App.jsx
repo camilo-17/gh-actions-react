@@ -24,7 +24,7 @@ function App() {
                 <div className="cards-container">
                     <Row>
                         {myProjects.map((element, index) => (
-                            <Col sm="12" md="6" lg="4" key={index}>
+                            <Col sm="12" md="12" lg="4" key={index} className="list-container">
                                 <ProyectCard></ProyectCard>
                             </Col>
                         ))}

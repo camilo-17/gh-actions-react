@@ -22,3 +22,17 @@
 .cards-container {
     margin-bottom: 20px;
 }
+
+@media (max-width: 426px) {
+    .hero-container {
+        flex-wrap: wrap;
+    }
+    .img-container {
+        margin-bottom: 10px;
+    }
+
+    .list-container {
+        display: flex;
+        justify-content: center;
+    }
+}
