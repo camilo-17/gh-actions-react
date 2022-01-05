@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
-        "build": "vite build --base=https://https://camilo-17.github.io/gh-actions-react/",
+        "build": "vite build --base=https://camilo-17.github.io/gh-actions-react/",
         "preview": "vite preview"
     },
     "dependencies": {
