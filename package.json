@@ -1,18 +1,20 @@
 {
-  "name": "gh-actions-react",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "shards-react": "^1.0.3"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
-    "vite": "^2.7.2"
-  }
+    "name": "gh-actions-react",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build --base=https://https://camilo-17.github.io/gh-actions-react/",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "aphrodite": "^2.4.0",
+        "react": "^17.0.2",
+        "react-animations": "^1.0.0",
+        "react-dom": "^17.0.2",
+        "shards-react": "^1.0.3"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^1.0.7",
+        "vite": "^2.7.2"
+    }
 }

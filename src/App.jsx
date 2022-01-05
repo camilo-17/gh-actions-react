@@ -1,29 +1,35 @@
 import { useState } from 'react';
 import AlertComponent from './components/Alert';
 import { Container, Row, Col } from 'shards-react';
-
+import NavExample from './components/Navbar';
+import ProyectCard from './components/Card';
+import Hero from './components/Hero';
 import './App.css';
-import 'shards-ui/dist/css/shards.min.css';
 
 function App() {
+    const myProjects = [1, 2, 3];
     return (
-        <Container>
-            <Row>
-                <Col sm="6" lg="6">
-                    <AlertComponent />
-                </Col>
-            </Row>
-            <Row>
-                <Col sm="6" lg="6">
-                    <p>Hola mundo</p>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm="6" lg="6">
-                    <p>Hola mundo</p>
-                </Col>
-            </Row>
-        </Container>
+        <div className="my-contendor">
+            <Container>
+                <NavExample></NavExample>
+                <div className="hero-container">
+                    <div className="img-container">
+                        <img className="img-profile" src="./assets/profile.jpg" alt="imagen-perfil" />
+                    </div>
+                    <Hero></Hero>
+                </div>
+
+                <div className="cards-container">
+                    <Row>
+                        {myProjects.map((element, index) => (
+                            <Col sm="12" md="6" lg="4" key={index}>
+                                <ProyectCard></ProyectCard>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            </Container>
+        </div>
     );
 }
 

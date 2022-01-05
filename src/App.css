@@ -1,0 +1,23 @@
+.my-contenedor {
+    padding: 30px;
+}
+
+.img-profile {
+    border-radius: 50%;
+    width: 50%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: end;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 50px;
+}
+
+.cards-container {
+    margin-bottom: 20px;
+}
