@@ -1,45 +1,30 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from 'react';
+import AlertComponent from './components/Alert';
+import { Container, Row, Col } from 'shards-react';
+
+import './App.css';
+import 'shards-ui/dist/css/shards.min.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    return (
+        <Container>
+            <Row>
+                <Col sm="6" lg="6">
+                    <AlertComponent />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm="6" lg="6">
+                    <p>Hola mundo</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm="6" lg="6">
+                    <p>Hola </p>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
-export default App
+export default App;
