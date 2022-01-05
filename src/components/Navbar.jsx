@@ -10,10 +10,10 @@ export default function NavExample() {
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">Projects</NavLink>
+                <NavLink href="#projects">Projects</NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">About me</NavLink>
+                <NavLink href="#about">About me</NavLink>
             </NavItem>
         </Nav>
     );
