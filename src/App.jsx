@@ -20,7 +20,7 @@ function App() {
             </Row>
             <Row>
                 <Col sm="6" lg="6">
-                    <p>Hola </p>
+                    <p>Hola mundo</p>
                 </Col>
             </Row>
         </Container>
