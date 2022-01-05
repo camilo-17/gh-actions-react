@@ -13,6 +13,9 @@ export default function NavExample() {
                 <NavLink href="#projects">Projects</NavLink>
             </NavItem>
             <NavItem>
+                <NavLink href="#courses">Courses</NavLink>
+            </NavItem>
+            <NavItem>
                 <NavLink href="#about">About me</NavLink>
             </NavItem>
         </Nav>

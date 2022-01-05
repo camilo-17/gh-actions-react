@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import AlertComponent from './components/Alert';
 import { Container, Row, Col } from 'shards-react';
 import NavExample from './components/Navbar';
 import ProyectCard from './components/Card';
@@ -7,6 +5,15 @@ import Hero from './components/Hero';
 import './App.css';
 
 import profileImg from '../assets/profile.jpg';
+import Courses from './components/Courses';
+
+import BdMlImg from '../assets/courses/bigdata_ml.png';
+import mvImg from '../assets/courses/maquinas_virtuales.png';
+import angularImg from '../assets/courses/angular.png';
+import pythonImg from '../assets/courses/python.png';
+import firebaseImg from '../assets/courses/firebase.png';
+import dockerImg from '../assets/courses/docker.png';
+import jsImg from '../assets/courses/js.png';
 
 function App() {
     const myProjects = [
@@ -32,6 +39,37 @@ function App() {
             link: '',
         },
     ];
+
+    const myCourses = [
+        {
+            title: 'Big data & Machine Learning',
+            img: BdMlImg,
+        },
+        {
+            title: 'Virtual Machine',
+            img: mvImg,
+        },
+        {
+            title: 'Angular',
+            img: angularImg,
+        },
+        {
+            title: 'docker',
+            img: dockerImg,
+        },
+        {
+            title: 'Python',
+            img: pythonImg,
+        },
+        {
+            title: 'firebase',
+            img: firebaseImg,
+        },
+        {
+            title: 'Profesional de JS',
+            img: jsImg,
+        },
+    ];
     return (
         <div className="my-contendor">
             <Container>
@@ -51,6 +89,18 @@ function App() {
                                 <ProyectCard data={element}></ProyectCard>
                             </Col>
                         ))}
+                    </Row>
+                </section>
+                <section id="courses">
+                    <h4>Aproved courses</h4>
+                    <Row>
+                        <div className="coursers-container">
+                            {myCourses.map((element, index) => (
+                                // <Col sm="12" md="12" lg="4" key={index} className="list-container">
+                                <Courses key={index} data={element}></Courses>
+                                // </Col>
+                            ))}
+                        </div>
                     </Row>
                 </section>
                 <h4>About me</h4>
