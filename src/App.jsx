@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import './App.css';
 
 import profileImg from '../assets/profile.jpg';
+import ppImg from '../assets/pp.jpg';
 import Courses from './components/Courses';
 
 import BdMlImg from '../assets/courses/bigdata_ml.png';
@@ -79,7 +80,7 @@ function App() {
                 <NavExample></NavExample>
                 <div className="hero-container">
                     <div className="img-container">
-                        <img className="img-profile" src={profileImg} alt="imagen-perfil" />
+                        <img className="img-profile" src={ppImg} alt="imagen-perfil" />
                     </div>
                     <Hero></Hero>
                 </div>
