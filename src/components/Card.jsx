@@ -10,7 +10,7 @@ export default function ProyectCard({ data }) {
     return (
         <Card style={{ maxWidth: '300px' }}>
             <CardHeader></CardHeader>
-            <CardImg src="https://place-hold.it/300x200" />
+            <CardImg src={img} />
             <CardBody>
                 <CardTitle>{title}</CardTitle>
                 <p>{desc}</p>

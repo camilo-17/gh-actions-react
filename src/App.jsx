@@ -15,25 +15,28 @@ import firebaseImg from '../assets/courses/firebase.png';
 import dockerImg from '../assets/courses/docker.png';
 import jsImg from '../assets/courses/js.png';
 
+import rickPorject from '../assets/projects/rick.gif';
+import slevePorject from '../assets/projects/svlete.gif';
+
 function App() {
     const myProjects = [
         {
             title: 'Rick and morty App',
-            img: '',
+            img: rickPorject,
             desc: 'This frontend use Rick and morty API for list characters.',
             longDesc: 'Use React and github pages',
             link: 'https://camilo-17.github.io/rick-and-morty-app',
         },
         {
             title: 'Sveltestagram',
-            img: '',
+            img: slevePorject,
             desc: 'This is a clon for instagram.',
             longDesc: 'Use Svelte and news API for load resources',
             link: 'https://amazing-ptolemy-9ed655.netlify.app',
         },
         {
             title: 'Block post App',
-            img: '',
+            img: 'https://place-hold.it/300x200',
             desc: 'This is a block post frontend.',
             longDesc: 'Use Symfony framework',
             link: '',
