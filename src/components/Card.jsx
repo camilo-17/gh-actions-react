@@ -6,12 +6,12 @@ import './styles/Card.css';
 export default function ProyectCard({ data }) {
     const { title, img, desc, longDesc, link } = data;
     const classImg = data?.classImg;
-    console.log(classImg)
+    
 
     const [showMore, setShowmore] = useState(false);
 
     return (
-        <Card style={{ maxWidth: '300px' }}>
+        <Card style={{ maxWidth: '300px' }} className="mt-2">
             <CardHeader></CardHeader>
             <CardImg className={classImg} src={img} />
             <CardBody>
