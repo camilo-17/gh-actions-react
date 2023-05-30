@@ -44,3 +44,9 @@
     width: 100%;
     flex-wrap: wrap;
 }
+
+.project-conta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

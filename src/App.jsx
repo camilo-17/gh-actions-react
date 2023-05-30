@@ -17,7 +17,9 @@ import dockerImg from '../assets/courses/docker.png';
 import jsImg from '../assets/courses/js.png';
 
 import rickPorject from '../assets/projects/rick.gif';
+import ionicPorject from '../assets/projects/ionic.gif';
 import slevePorject from '../assets/projects/svlete.gif';
+import flutterPorject from '../assets/projects/flutter.gif';
 
 function App() {
     const myProjects = [
@@ -41,6 +43,22 @@ function App() {
             desc: 'This is a block post frontend.',
             longDesc: 'Use Symfony framework',
             link: '',
+        },
+        {
+            title: 'Ionic speed test App',
+            img: ionicPorject,
+            desc: 'Speedtest app developed during a freelance project.',
+            longDesc: 'Use Ionic, cordova and capacitor',
+            link: '',
+            classImg: 'image-app'
+        },
+        {
+            title: 'Flutter codeLab',
+            img: flutterPorject,
+            desc: 'Flutter code lab boostraped to learn.',
+            longDesc: 'Flutter',
+            link: '',
+            classImg: 'image-app'
         },
     ];
 
@@ -87,13 +105,13 @@ function App() {
 
                 <section id="projects" className="cards-container">
                     <h4>These are my projects</h4>
-                    <Row>
+                    <div className='project-conta'>
                         {myProjects.map((element, index) => (
                             <Col sm="12" md="12" lg="4" key={index} className="list-container">
                                 <ProyectCard data={element}></ProyectCard>
                             </Col>
                         ))}
-                    </Row>
+                    </div>
                 </section>
                 <section id="courses">
                     <h4>Aproved courses</h4>
@@ -110,11 +128,8 @@ function App() {
                 <h4>About me</h4>
                 <section id="about">
                     <p>
-                        Jr. Full-stack Software Developer Engineer with abilities in Javascript, Node JS, PHP,
-                        Angular and React, also knowledge in databases like SQL and mongoDB. Knowledge in
-                        cloud tecnologies like GCP. Likes to experiment with hardware tecnologies like arduino
-                        and ESP32 in addition with basic knowledge in telecomunications tecnologies for IoT
-                        like LoRa.
+                     
+As a Fullstack Software Developer Engineer, I have extensive experience working with a diverse range of technologies. I have worked with Angular, Node.js, React.js, Svelte, Flutter, Ionic, NestJS, and Next.js, which have allowed me to build robust and scalable web and mobile applications. Additionally, I have a strong background in IoT technologies, enabling me to integrate software systems with connected devices seamlessly. With a holistic understanding of both frontend and backend development, I am proficient in designing efficient architectures, implementing RESTful APIs, and ensuring seamless data flow between different components. My expertise in these technologies and my passion for innovation enable me to deliver high-quality solutions that meet the unique needs of each project.
                     </p>
                 </section>
             </Container>

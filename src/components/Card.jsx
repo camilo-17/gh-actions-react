@@ -5,12 +5,15 @@ import './styles/Card.css';
 
 export default function ProyectCard({ data }) {
     const { title, img, desc, longDesc, link } = data;
+    const classImg = data?.classImg;
+    console.log(classImg)
+
     const [showMore, setShowmore] = useState(false);
 
     return (
         <Card style={{ maxWidth: '300px' }}>
             <CardHeader></CardHeader>
-            <CardImg src={img} />
+            <CardImg className={classImg} src={img} />
             <CardBody>
                 <CardTitle>{title}</CardTitle>
                 <p>{desc}</p>
