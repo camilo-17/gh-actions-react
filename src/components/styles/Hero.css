@@ -4,3 +4,8 @@
 .play-container {
     text-align: center;
 }
+
+
+.dark-mode-logo {
+    filter: invert(1);
+}

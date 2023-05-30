@@ -50,3 +50,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}

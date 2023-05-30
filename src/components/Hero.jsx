@@ -42,13 +42,13 @@ function Hero() {
 
     return (
         <div className="play-container">
-            <div className="images-play-container">
+            <div id='logo-play-station' className="images-play-container">
                 <img className={css(styles.fadeInLeft)} src={triangleImg} alt="triangle" />
                 <img className={css(styles.fadeInUp)} src={squareImg} alt="square" />
                 <img className={css(styles.fadeInDown)} src={cirleImg} alt="circle" />
                 <img className={css(styles.fadeInRight)} src={exImg} alt="ex" />
             </div>
-            {showImage ? <h3 className={css(styles.zoomIn)}>Status playing ...</h3> : <h3></h3>}
+            {showImage ? <h3 className={css(styles.zoomIn)}>Camilo Caro 🧑‍💻</h3> : <h3></h3>}
         </div>
     );
 }
