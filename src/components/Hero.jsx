@@ -48,7 +48,7 @@ function Hero() {
                 <img className={css(styles.fadeInDown)} src={cirleImg} alt="circle" />
                 <img className={css(styles.fadeInRight)} src={exImg} alt="ex" />
             </div>
-            {showImage ? <h3 className={css(styles.zoomIn)}>Camilo Caro</h3> : <h3></h3>}
+            {showImage ? <h3 className={css(styles.zoomIn)}>Camilo Caro.</h3> : <h3></h3>}
         </div>
     );
 }
