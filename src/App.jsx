@@ -20,6 +20,7 @@ import rickPorject from '../assets/projects/rick.gif';
 import ionicPorject from '../assets/projects/ionic.gif';
 import slevePorject from '../assets/projects/svlete.gif';
 import flutterPorject from '../assets/projects/flutter.gif';
+import portfolioPorject from '../assets/projects/portfolio.gif';
 
 function App() {
     const myProjects = [
@@ -38,11 +39,11 @@ function App() {
             link: 'https://amazing-ptolemy-9ed655.netlify.app',
         },
         {
-            title: 'Block post App',
-            img: 'https://place-hold.it/300x200',
-            desc: 'This is a block post frontend.',
-            longDesc: 'Use Symfony framework',
-            link: '',
+            title: 'Portfolio',
+            img: portfolioPorject,
+            desc: 'This is my portfolio.',
+            longDesc: 'Desing to show all personal and freelance projects.',
+            link: 'https://camilocaro.com',
         },
         {
             title: 'Ionic speed test App',
