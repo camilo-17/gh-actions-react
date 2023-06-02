@@ -20,7 +20,7 @@ import rickPorject from '../assets/projects/rick.gif';
 import ionicPorject from '../assets/projects/ionic.gif';
 import slevePorject from '../assets/projects/svlete.gif';
 import flutterPorject from '../assets/projects/flutter.gif';
-import portfolioPorject from '../assets/projects/portfolio.gif';
+import portfolioPorject from '../assets/projects/portfolio_new.gif';
 
 function App() {
     const myProjects = [
