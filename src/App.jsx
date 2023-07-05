@@ -26,7 +26,7 @@ import React, { useState, useEffect } from 'react';
 function App() {
     const myProjects = [
         {
-            title: 'Rick and morty App new',
+            title: 'Rick and morty App',
             img: 'https://tenor.googleapis.com/v2/media?id=4622616830546548677&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
             desc: 'This frontend use Rick and morty API for list characters.',
             longDesc: 'Use React and github pages',
