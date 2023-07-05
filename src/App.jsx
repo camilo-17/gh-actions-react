@@ -21,6 +21,7 @@ import ionicPorject from '../assets/projects/ionic.gif';
 import slevePorject from '../assets/projects/svlete.gif';
 import flutterPorject from '../assets/projects/flutter.gif';
 import portfolioPorject from '../assets/projects/portfolio_new.gif';
+import CoinAppPorject from '../assets/projects/coin_app.gif';
 
 function App() {
     const myProjects = [
@@ -60,6 +61,14 @@ function App() {
             longDesc: 'Flutter',
             link: '',
             classImg: 'image-app'
+        },
+               {
+            title: 'Flutter coin app',
+            img: CoinAppPorject,
+            desc: 'Flutter coin app developed consming coin gekko API.',
+            longDesc: 'Flutter',
+            link: '',
+            classImg: 'image-app-2'
         },
     ];
 

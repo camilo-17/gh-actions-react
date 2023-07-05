@@ -6,3 +6,9 @@
     max-width: 70%;
     margin: 0 auto;
 }
+
+.image-app-2 {
+    /* max-width: 90%; */
+    margin: 0 auto;
+    min-width: 61%;
+}
