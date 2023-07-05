@@ -29,21 +29,21 @@ function App() {
     const myProjects = [
         {
             title: 'Rick and morty App',
-            img: rickPorject,
+            img: 'https://tenor.googleapis.com/v2/media?id=4622616830546548677&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
             desc: 'This frontend use Rick and morty API for list characters.',
             longDesc: 'Use React and github pages',
             link: 'https://camilo-17.github.io/rick-and-morty-app',
         },
         {
             title: 'Sveltestagram',
-            img: 'https://place-hold.it/300x200',
+            img: 'https://tenor.googleapis.com/v2/media?id=2030027129968973399&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
             desc: 'This is a clon for instagram.',
             longDesc: 'Use Svelte and news API for load resources',
             link: 'https://amazing-ptolemy-9ed655.netlify.app',
         },
         {
             title: 'Portfolio',
-            img: 'https://place-hold.it/300x200',
+            img: 'https://tenor.googleapis.com/v2/media?id=4289354168806658599&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
             desc: 'This is my portfolio.',
             longDesc: 'Desing to show all personal and freelance projects.',
             link: 'https://camilocaro.com',
@@ -66,7 +66,7 @@ function App() {
         },
         {
             title: 'Flutter coin app',
-            img: CoinAppPorject,
+            img: 'https://tenor.googleapis.com/v2/media?id=704287005785292458&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
             desc: 'Flutter coin app developed consming coin gekko API.',
             longDesc: 'Flutter',
             link: '',
