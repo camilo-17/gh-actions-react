@@ -10,14 +10,15 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL, listAll } from 'firebase/storage';
+
 function App() {
     const firebaseConfig = {
-        apiKey: context.env.API_KEY,
+        apiKey: import.meta.env.API_KEY,
         authDomain: 'flutter-booksky.firebaseapp.com',
         projectId: 'flutter-booksky',
         storageBucket: 'flutter-booksky.appspot.com',
         messagingSenderId: '720062944985',
-        appId: context.env.API_ID,
+        appId: import.meta.env.API_ID,
     };
 
     const [files, setFiles] = useState([]);
