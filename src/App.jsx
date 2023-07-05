@@ -3,11 +3,12 @@ import NavExample from './components/Navbar';
 import ProyectCard from './components/Card';
 import Hero from './components/Hero';
 import './App.css';
-
+import Skeleton from 'react-loading-skeleton';
 import profileImg from '../assets/profile.jpg';
 import ppImg from '../assets/pp.jpg';
+import { Button } from 'shards-react';
 import Courses from './components/Courses';
-
+import 'react-loading-skeleton/dist/skeleton.css';
 import BdMlImg from '../assets/courses/bigdata_ml.png';
 import mvImg from '../assets/courses/maquinas_virtuales.png';
 import angularImg from '../assets/courses/angular.png';
@@ -22,6 +23,7 @@ import slevePorject from '../assets/projects/svlete.gif';
 import flutterPorject from '../assets/projects/flutter.gif';
 import portfolioPorject from '../assets/projects/portfolio_new.gif';
 import CoinAppPorject from '../assets/projects/coin_app.gif';
+import React, { useState, useEffect } from 'react';
 
 function App() {
     const myProjects = [
@@ -34,14 +36,14 @@ function App() {
         },
         {
             title: 'Sveltestagram',
-            img: slevePorject,
+            img: 'https://place-hold.it/300x200',
             desc: 'This is a clon for instagram.',
             longDesc: 'Use Svelte and news API for load resources',
             link: 'https://amazing-ptolemy-9ed655.netlify.app',
         },
         {
             title: 'Portfolio',
-            img: portfolioPorject,
+            img: 'https://place-hold.it/300x200',
             desc: 'This is my portfolio.',
             longDesc: 'Desing to show all personal and freelance projects.',
             link: 'https://camilocaro.com',
@@ -52,7 +54,7 @@ function App() {
             desc: 'Speedtest app developed during a freelance project.',
             longDesc: 'Use Ionic, cordova and capacitor',
             link: '',
-            classImg: 'image-app'
+            classImg: 'image-app',
         },
         {
             title: 'Flutter codeLab',
@@ -60,15 +62,15 @@ function App() {
             desc: 'Flutter code lab boostraped to learn.',
             longDesc: 'Flutter',
             link: '',
-            classImg: 'image-app'
+            classImg: 'image-app',
         },
-               {
+        {
             title: 'Flutter coin app',
             img: CoinAppPorject,
             desc: 'Flutter coin app developed consming coin gekko API.',
             longDesc: 'Flutter',
             link: '',
-            classImg: 'image-app-2'
+            classImg: 'image-app-2',
         },
     ];
 
@@ -102,20 +104,35 @@ function App() {
             img: jsImg,
         },
     ];
+    const [showImag, setShowimg] = useState([]);
+
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log('dsd', showImag);
+    }, [showImag]);
     return (
         <div className="my-contendor">
             <Container>
                 <NavExample></NavExample>
                 <div className="hero-container">
                     <div className="img-container">
-                        <img className="img-profile" src={ppImg} alt="imagen-perfil" />
+                        <img
+                            className="img-profile"
+                            style={showImag.length > 0 ? {} : { display: 'none' }}
+                            src={ppImg}
+                            alt="imagen-perfil"
+                            onLoad={() => setShowimg([...showImag, true])}
+                        />
+                        {showImag.length === 0 && (
+                            <Skeleton className="img-profile" width={200} height={200} circle={true} />
+                        )}
                     </div>
                     <Hero></Hero>
                 </div>
 
                 <section id="projects" className="cards-container">
                     <h4>These are my projects</h4>
-                    <div className='project-conta'>
+                    <div className="project-conta">
                         {myProjects.map((element, index) => (
                             <Col sm="12" md="12" lg="4" key={index} className="list-container">
                                 <ProyectCard data={element}></ProyectCard>
@@ -138,8 +155,16 @@ function App() {
                 <h4>About me</h4>
                 <section id="about">
                     <p>
-                     
-As a Fullstack Software Developer Engineer, I have extensive experience working with a diverse range of technologies. I have worked with Angular, Node.js, React.js, Svelte, Flutter, Ionic, NestJS, and Next.js, which have allowed me to build robust and scalable web and mobile applications. Additionally, I have a strong background in IoT technologies, enabling me to integrate software systems with connected devices seamlessly. With a holistic understanding of both frontend and backend development, I am proficient in designing efficient architectures, implementing RESTful APIs, and ensuring seamless data flow between different components. My expertise in these technologies and my passion for innovation enable me to deliver high-quality solutions that meet the unique needs of each project.
+                        As a Fullstack Software Developer Engineer, I have extensive experience working with a
+                        diverse range of technologies. I have worked with Angular, Node.js, React.js, Svelte,
+                        Flutter, Ionic, NestJS, and Next.js, which have allowed me to build robust and
+                        scalable web and mobile applications. Additionally, I have a strong background in IoT
+                        technologies, enabling me to integrate software systems with connected devices
+                        seamlessly. With a holistic understanding of both frontend and backend development, I
+                        am proficient in designing efficient architectures, implementing RESTful APIs, and
+                        ensuring seamless data flow between different components. My expertise in these
+                        technologies and my passion for innovation enable me to deliver high-quality solutions
+                        that meet the unique needs of each project.
                     </p>
                 </section>
             </Container>

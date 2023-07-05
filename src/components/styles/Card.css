@@ -12,3 +12,7 @@
     margin: 0 auto;
     min-width: 61%;
 }
+
+.m-with-300 {
+    max-width: 300px;
+}
