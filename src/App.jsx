@@ -17,12 +17,10 @@ import firebaseImg from '../assets/courses/firebase.png';
 import dockerImg from '../assets/courses/docker.png';
 import jsImg from '../assets/courses/js.png';
 
-import rickPorject from '../assets/projects/rick.gif';
 import ionicPorject from '../assets/projects/ionic.gif';
-import slevePorject from '../assets/projects/svlete.gif';
+
 import flutterPorject from '../assets/projects/flutter.gif';
-import portfolioPorject from '../assets/projects/portfolio_new.gif';
-import CoinAppPorject from '../assets/projects/coin_app.gif';
+
 import React, { useState, useEffect } from 'react';
 
 function App() {
