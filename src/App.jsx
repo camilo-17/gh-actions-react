@@ -4,110 +4,131 @@ import ProyectCard from './components/Card';
 import Hero from './components/Hero';
 import './App.css';
 import Skeleton from 'react-loading-skeleton';
-import profileImg from '../assets/profile.jpg';
 import ppImg from '../assets/pp.jpg';
-import { Button } from 'shards-react';
 import Courses from './components/Courses';
 import 'react-loading-skeleton/dist/skeleton.css';
-import BdMlImg from '../assets/courses/bigdata_ml.png';
-import mvImg from '../assets/courses/maquinas_virtuales.png';
-import angularImg from '../assets/courses/angular.png';
-import pythonImg from '../assets/courses/python.png';
-import firebaseImg from '../assets/courses/firebase.png';
-import dockerImg from '../assets/courses/docker.png';
-import jsImg from '../assets/courses/js.png';
-
-import ionicPorject from '../assets/projects/ionic.gif';
-
-import flutterPorject from '../assets/projects/flutter.gif';
-
 import React, { useState, useEffect } from 'react';
-
+import { initializeApp } from 'firebase/app';
+import { getStorage, ref, getDownloadURL, listAll } from 'firebase/storage';
 function App() {
-    const myProjects = [
-        {
-            title: 'Rick and morty App',
-            img: 'https://tenor.googleapis.com/v2/media?id=4622616830546548677&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
-            desc: 'This frontend use Rick and morty API for list characters.',
-            longDesc: 'Use React and github pages',
-            link: 'https://camilo-17.github.io/rick-and-morty-app',
-        },
-        {
-            title: 'Sveltestagram',
-            img: 'https://tenor.googleapis.com/v2/media?id=2030027129968973399&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
-            desc: 'This is a clon for instagram.',
-            longDesc: 'Use Svelte and news API for load resources',
-            link: 'https://amazing-ptolemy-9ed655.netlify.app',
-        },
-        {
-            title: 'Portfolio',
-            img: 'https://tenor.googleapis.com/v2/media?id=4289354168806658599&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
-            desc: 'This is my portfolio.',
-            longDesc: 'Desing to show all personal and freelance projects.',
-            link: 'https://camilocaro.com',
-        },
-        {
-            title: 'Ionic speed test App',
-            img: ionicPorject,
-            desc: 'Speedtest app developed during a freelance project.',
-            longDesc: 'Use Ionic, cordova and capacitor',
-            link: '',
-            classImg: 'image-app',
-        },
-        {
-            title: 'Flutter codeLab',
-            img: flutterPorject,
-            desc: 'Flutter code lab boostraped to learn.',
-            longDesc: 'Flutter',
-            link: '',
-            classImg: 'image-app',
-        },
-        {
-            title: 'Flutter coin app',
-            img: 'https://tenor.googleapis.com/v2/media?id=704287005785292458&format=optimizedgif&client_key=tenor_web&appversion=browser-r20230629-1&access_token=ya29.a0AbVbY6MRS2hWE6pm2-jMCtAi0HU7WBXxyzw4jbaMTmUz0DBzwvwIoQvAeHVQbHJiMZE0uPpOLDJIsXedGr5OAAeCPTFfqyKcJrLa9-GE8nDIAYYYLyrttsRsShwt0YDKZ5dSImR9mAu8bzy_4TP5tbRM0FPWaCgYKAZgSARESFQFWKvPlwnhgv8HfSguAsJDAw-OYMQ0163&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8',
-            desc: 'Flutter coin app developed consming coin gekko API.',
-            longDesc: 'Flutter',
-            link: '',
-            classImg: 'image-app-2',
-        },
-    ];
+    const firebaseConfig = {
+        apiKey: context.env.API_KEY,
+        authDomain: 'flutter-booksky.firebaseapp.com',
+        projectId: 'flutter-booksky',
+        storageBucket: 'flutter-booksky.appspot.com',
+        messagingSenderId: '720062944985',
+        appId: context.env.API_ID,
+    };
 
-    const myCourses = [
-        {
-            title: 'Big data & Machine Learning',
-            img: BdMlImg,
-        },
-        {
-            title: 'Virtual Machine',
-            img: mvImg,
-        },
-        {
-            title: 'Angular',
-            img: angularImg,
-        },
-        {
-            title: 'docker',
-            img: dockerImg,
-        },
-        {
-            title: 'Python',
-            img: pythonImg,
-        },
-        {
-            title: 'firebase',
-            img: firebaseImg,
-        },
-        {
-            title: 'Profesional de JS',
-            img: jsImg,
-        },
-    ];
-    const [showImag, setShowimg] = useState([]);
+    const [files, setFiles] = useState([]);
+    const [myProjects, setMyProjects] = useState([]);
+    const [myCourses, setMyCourses] = useState([]);
+    // let myProjects = [];
 
     useEffect(() => {
-        // Update the document title using the browser API
-        console.log('dsd', showImag);
-    }, [showImag]);
+        if (files.length === 0) {
+            return;
+        }
+        const newMyProjects = [
+            {
+                title: 'Rick and morty App',
+                img: files.find((element) => element.includes('rick')),
+                desc: 'This frontend use Rick and morty API for list characters.',
+                longDesc: 'Use React and github pages',
+                link: 'https://camilo-17.github.io/rick-and-morty-app',
+            },
+            {
+                title: 'Sveltestagram',
+                img: files.find((element) => element.includes('svlete')),
+                desc: 'This is a clon for instagram.',
+                longDesc: 'Use Svelte and news API for load resources',
+                link: 'https://amazing-ptolemy-9ed655.netlify.app',
+            },
+            {
+                title: 'Portfolio',
+                img: files.find((element) => element.includes('portfolio_new')),
+                desc: 'This is my portfolio.',
+                longDesc: 'Desing to show all personal and freelance projects.',
+                link: 'https://camilocaro.com',
+            },
+            {
+                title: 'Ionic speed test App',
+                img: files.find((element) => element.includes('ionic')),
+                desc: 'Speedtest app developed during a freelance project.',
+                longDesc: 'Use Ionic, cordova and capacitor',
+                link: '',
+                classImg: 'image-app',
+            },
+            {
+                title: 'Flutter codeLab',
+                img: files.find((element) => element.includes('flutter.gif')),
+                desc: 'Flutter code lab boostraped to learn.',
+                longDesc: 'Flutter',
+                link: '',
+                classImg: 'image-app',
+            },
+            {
+                title: 'Flutter coin app',
+                img: files.find((element) => element.includes('coin_app')),
+                desc: 'Flutter coin app developed consming coin gekko API.',
+                longDesc: 'Flutter',
+                link: '',
+                classImg: 'image-app-2',
+            },
+        ];
+        const newmyCourses = [
+            {
+                title: 'Big data & Machine Learning',
+                img: files.find((element) => element.includes('bigdata_ml')),
+            },
+            {
+                title: 'Virtual Machine',
+                img: files.find((element) => element.includes('maquinas_virtuales')),
+            },
+            {
+                title: 'Angular',
+                img: files.find((element) => element.includes('angular')),
+            },
+            {
+                title: 'docker',
+                img: files.find((element) => element.includes('docker')),
+            },
+            {
+                title: 'Python',
+                img: files.find((element) => element.includes('python')),
+            },
+            {
+                title: 'firebase',
+                img: files.find((element) => element.includes('firebase.png')),
+            },
+            {
+                title: 'Profesional de JS',
+                img: files.find((element) => element.includes('js.png')),
+            },
+        ];
+        setMyProjects(newMyProjects);
+        setMyCourses(newmyCourses);
+    }, [files]);
+
+    const app = initializeApp(firebaseConfig);
+
+    const fetchImages = async () => {
+        const storage = getStorage();
+        const listRef = await listAll(ref(storage, 'portfolio'));
+        let urlPromises = listRef.items.map((imageRef) => getDownloadURL(imageRef));
+
+        return Promise.all(urlPromises);
+    };
+
+    const loadImages = async () => {
+        const urls = await fetchImages();
+        setFiles(urls);
+    };
+    if (files.length === 0) {
+        loadImages();
+    }
+    const [showImag, setShowimg] = useState([]);
+
     return (
         <div className="my-contendor">
             <Container>
