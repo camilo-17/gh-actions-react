@@ -81,7 +81,7 @@ function App() {
                 img: files.find((element) => element.includes('quiz')),
                 desc: 'Flutter Quiz App with animations and custom styles.',
                 longDesc: 'Flutter',
-                link: '',
+                link: 'https://github.com/camilo-17/quiz-app',
                 classImg: 'image-app-2',
             },
         ];
