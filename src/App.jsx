@@ -76,6 +76,14 @@ function App() {
                 link: '',
                 classImg: 'image-app-2',
             },
+            {
+                title: 'Flutter Quiz App',
+                img: files.find((element) => element.includes('quiz')),
+                desc: 'Flutter Quiz App with animations and custom styles.',
+                longDesc: 'Flutter',
+                link: '',
+                classImg: 'image-app-2',
+            },
         ];
         const newmyCourses = [
             {
