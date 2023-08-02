@@ -16,3 +16,12 @@
 .m-with-300 {
     max-width: 300px;
 }
+
+.custom-card {
+    view-timeline-name: --revealing-image;
+    animation-name: show;
+    animation-fill-mode: both;
+    animation-timeline: --revealing-image;
+    animation-range: entry 25% cover 50%;
+
+}

@@ -18,7 +18,7 @@ export default function ProyectCard({ data }) {
     return (
         <>
             {!showImg && <Skeleton className="mt-2 m-with-300" width={300} height={500} />}
-            <Card style={showImg ? {} : { display: 'none' }} className="mt-2 m-with-300">
+            <Card style={showImg ? {} : { display: 'none' }} className="custom-card mt-2 m-with-300">
                 <CardHeader></CardHeader>
                 <img className={classImg} src={img} onLoad={() => setShowImg(true)} />
                 <CardBody>

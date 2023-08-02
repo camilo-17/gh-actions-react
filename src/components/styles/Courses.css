@@ -8,4 +8,9 @@
 
 .img-container-course {
     padding: 10px;
+    view-timeline-name: --revealing-image;
+    animation-name: show;
+    animation-fill-mode: both;
+    animation-timeline: --revealing-image;
+    animation-range: entry 25% cover 50%;
 }
