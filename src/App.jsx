@@ -10,6 +10,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, getDownloadURL, listAll } from 'firebase/storage';
+import { Cover } from './components/Cover';
 
 function App() {
     const firebaseConfig = {
@@ -140,6 +141,7 @@ function App() {
 
     return (
         <div className="my-contendor">
+            <Cover />
             <Container>
                 <NavExample></NavExample>
                 <div className="hero-container">

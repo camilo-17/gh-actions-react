@@ -21,3 +21,7 @@ html.dark-mode img {
         scale: 100%;
     }
 }
+
+.test {
+    border: 1px solid red;
+}
