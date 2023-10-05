@@ -42,7 +42,7 @@ function Hero() {
 
     return (
         <div className="play-container">
-            <div id='logo-play-station' className="images-play-container">
+            <div id="logo-play-station" className="images-play-container dark-mode-logo">
                 <img className={css(styles.fadeInLeft)} src={triangleImg} alt="triangle" />
                 <img className={css(styles.fadeInUp)} src={squareImg} alt="square" />
                 <img className={css(styles.fadeInDown)} src={cirleImg} alt="circle" />
