@@ -161,7 +161,7 @@ function App() {
                 </div>
 
                 <section id="projects" className="cards-container">
-                    <h4>These are my projects</h4>
+                    <h4>Some projects realized by me</h4>
                     <div className="project-conta">
                         {myProjects.map((element, index) => (
                             <Col sm="12" md="12" lg="4" key={index} className="list-container">
